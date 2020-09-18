@@ -1,8 +1,8 @@
-# Zenvia::Ruby
+# Zenvia Ruby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/zenvia/ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
+Bindings para api Zenvia
 
-TODO: Delete this and the text above, and describe your gem
+https://zenapi.zenvia.com/
 
 ## Installation
 
@@ -22,7 +22,29 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add this to an intitializer
+```ruby
+Zenvia.configure do |c|
+  c.token = 'xxxxxx'
+  c.whatsapp_from = 'dent-sparrow'
+end
+```
+Send text messages:
+
+```ruby
+Zenvia::WhatsApp.send_text(to: 'xxxx', message: 'primeira via api')
+```
+
+Send template messages:
+
+```ruby
+Zenvia::WhatsApp.send_template(to: 'xxxxx'
+                               template_id: '7020afb0-0bf7-4c25-96a5-dc47383b7f7c',
+                               fields: {"name": "aaaa",
+                                        "productName": "bbbb",
+                                        "deliveryDate": "ccc"})
+```
+
 
 ## Development
 
@@ -32,7 +54,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/zenvia-ruby.
+Bug reports and pull requests are welcome on GitHub at https://github.com/alextakitani/zenvia-ruby.
 
 
 ## License

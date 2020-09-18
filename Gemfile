@@ -9,3 +9,4 @@ gem "webmock"
 gem "byebug"
 gem "pry"
 gem "pry-byebug"
+gem 'faraday'
