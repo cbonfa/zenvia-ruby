@@ -1,6 +1,7 @@
 module Zenvia
   class WhatsApp
-    @api_url = "/v1/channels/whatsapp/messages"
+    # @api_url = "/v1/channels/whatsapp/messages"
+    @api_url = "/v2/channels/whatsapp/messages"
     @conn = nil
 
     def self.connect

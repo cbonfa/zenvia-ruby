@@ -15,4 +15,5 @@ module Zenvia
     self.configuration ||= Configuration.new
     yield(configuration)
   end
+
 end

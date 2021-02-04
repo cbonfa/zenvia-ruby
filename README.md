@@ -1,6 +1,6 @@
 # Zenvia Ruby
 
-Bindings para api Zenvia
+Bindings para api Zenvia v2 (Whatsapp only)
 
 https://zenapi.zenvia.com/
 
