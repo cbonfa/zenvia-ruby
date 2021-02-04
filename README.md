@@ -32,13 +32,13 @@ end
 Send text messages:
 
 ```ruby
-Zenvia::WhatsApp.send_text(to: 'xxxx', message: 'primeira via api')
+Zenvia::WhatsApp.send_text(to: 'XXYYZZZZZZZZZ', message: 'first message')
 ```
 
 Send template messages:
 
 ```ruby
-Zenvia::WhatsApp.send_template(to: 'xxxxx'
+Zenvia::WhatsApp.send_template(to: 'XXYYZZZZZZZZZ'
                                template_id: '7020afb0-0bf7-4c25-96a5-dc47383b7f7c',
                                fields: {"name": "aaaa",
                                         "productName": "bbbb",
