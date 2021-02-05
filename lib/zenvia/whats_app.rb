@@ -1,6 +1,5 @@
 module Zenvia
   class WhatsApp
-    # @api_url = "/v1/channels/whatsapp/messages"
     @api_url = "/v2/channels/whatsapp/messages"
     @conn = nil
 
@@ -22,7 +21,7 @@ module Zenvia
       end
     end
 
-    def self.send_template(to:, template_id:, fields:)
+    def self.send_template(to:, template_id:, fields: {})
       connect
       @conn.post(@api_url) do |req|
         req.body = {
@@ -36,5 +35,16 @@ module Zenvia
         }.to_json
       end
     end
+
+    def self.templates(status: nil, channel: nil, sendId: nil)
+      connect
+      @conn.get 'https://api.zenvia.com/v2/templates', { status: status, channel: channel, sendId: sendId }.reject{|k,v| v.nil?}
+    end
+
+    def self.template(templateId)
+      connect
+      @conn.get "https://api.zenvia.com/v2/templates/#{templateId}"
+    end
+
   end
 end
