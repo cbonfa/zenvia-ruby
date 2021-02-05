@@ -45,6 +45,17 @@ Zenvia::WhatsApp.send_template(to: '5510999999999'
                                         "deliveryDate": "ccc"})
 ```
 
+Show All Templates:
+
+```ruby
+Zenvia::WhatsApp.templates(channel: 'WHATSAPP')
+```
+
+Find Template:
+
+```ruby
+Zenvia::WhatsApp.template('7020afb0-0bf7-4c25-96a5-dc47383b7f7c')
+```
 
 ## Development
 
