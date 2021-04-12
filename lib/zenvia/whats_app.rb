@@ -38,7 +38,12 @@ module Zenvia
 
     def self.templates(status: nil, channel: nil, sendId: nil)
       connect
-      @conn.get 'https://api.zenvia.com/v2/templates', { status: status, channel: channel, sendId: sendId }.reject{|k,v| v.nil?}
+      retorno = @conn.get 'https://api.zenvia.com/v2/templates', { status: status, channel: channel, sendId: sendId }.reject{|k,v| v.nil?}
+      if retorno.reason_phrase == 'OK'
+        JSON.parse(retorno.body)
+      else
+        []
+      end
     end
 
     def self.template(templateId)
